@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>MyCalculator</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="StyleSheet.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Holly's Calculator</h1>
+        </header>
+        <form class="calculator">
+            <input class="display" placeholder="0" />
+            <div id="keypad">
+                <!--the calculator buttons  7 8 9  -->
+                <section class="row-of-buttons">
+                    <input type="button" value="7" onclick="document.Calculator.display.value +='7'" />
+                    <input type="button" value="7" onclick="document.Calculator.display.value +='7'" />
+                    <input type="button" value="9" onclick="document.Calculator.display.value +='9'" />
+                    <!--button +: when clicked will call the btnplus() function -->
+                    <input type="button" value="+" onclick="btnplus()" />
+                </section>
+                <section class="row-of-buttons">
+                    <!--the calculator buttons  4 5 6 -->
+                    <input type="button" value="7" onclick="document.Calculator.display.value +='7'" />
+                    <input type="button" value="7" onclick="document.Calculator.display.value +='7'" />
+                    <input type="button" value="6" onclick="document.Calculator.display.value +='6'" />
+                    <!--button +: when clicked will call the btnsub() function -->
+                    <input type="button" value="-" onclick="btnsub()" />
+                </section>
+                <section class="row-of-buttons">
+                    <!--the calculator buttons  1 2 3  -->
+                    <input type="button" value="3" onclick="document.Calculator.display.value +='3'" />
+                    <input type="button" value="2" onclick="document.Calculator.display.value +='2'" />
+                    <input type="button" value="1" onclick="document.Calculator.display.value +='1'" />
+                    <!--button +: when clicked will call the btnmult() function -->
+                    <input type="button" value="*" onclick="btnmult()" />
+                </section>
+                <section class="row-of-buttons">
+                    <!--the calculator buttons 0 % . / -->
+                    <input type="button" value="0" onclick="document.Calculator.display.value +='0'" />
+                    <!--button +: when clicked will call the btnMod() function  -->
+                    <input type="button" value="%" onclick="btnMod()" />
+                    <!--button +: when clicked will call the btndot() function  -->
+                    <input type="button" value="." onclick="btndot()" />
+                    <!--button +: when clicked will call the btndiv() function  -->
+                    <input type="button" value="/" onclick="btndiv()" />
+                </section>
+                <section class="row-of-buttons">
+                    <!--the calculator buttons = and C(clear) -->
+                    <!--button C: when clicked will call the btnclear() function  -->
+                    <input type="button" value="=" onclick="document.Calculator.display.value = eval(document.Calculator.display.value)"
+                           class="end-button" id="equals-button" />
+                    <input type="button" value="C" onclick="btnclear()" />
+                </section>
+            </div>
+        </form>
+    </div>
+    <script>
+        function btnplus() {
+            document.Calculator.display.value += "+";
+            document.Calculator.display.style.textAlign = "right";
+        }
+        function btnsub() {
+            document.Calculator.display.value += "-";
+            document.Calculator.display.style.textAlign = "right";
+        }
+        function btnmult() {
+            document.Calculator.display.value += "*";
+            document.Calculator.display.style.textAlign = "right";
+        }
+        function btnMod() {
+            document.Calculator.display.value += "%";
+            document.Calculator.display.style.textAlign = "right";
+        }
+        function btndot() {
+            document.Calculator.display.value += ".";
+            document.Calculator.display.style.textAlign = "right";
+        }
+        function btndiv() {
+            document.Calculator.display.value += "/";
+            document.Calculator.display.style.textAlign = "right";
+        }
+        function btnclear() {
+            document.Calculator.display.value = "";
+            document.Calculator.display.style.textAlign = "right";
+        }
+    </script>
+</body>
+</html>
